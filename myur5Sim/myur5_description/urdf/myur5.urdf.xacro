@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https//wiki.ros.org/xacro" name="myur5">
+
+   <!--xacro:include filename="$(find myur5_description)/urdf/myur51.gazebo"/-->
+   <!--xacro:include filename="$(find ur_description)/urdf/materials.xacro"/-->
+
+  
+    
+   
+   <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
+   <!-- common stuff -->
+   <xacro:include filename="$(find ur_description)/urdf/common.gazebo.xacro"/>
+   <!-- ur5 -->
+   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro"/>
+   <!-- arm -->
+   <xacro:ur5_robot prefix="" joint_limited="true" transmission_hw_interface="$(arg transmission_hw_interface)"/>
+    
+   <!--joint name="base_joint" type="fixed">
+      <parent link="pedestal"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 1" rpy="0.0 0.0 0.0"/>
+   </joint-->
+   
+ <!-- camera joint -->
+   <!--xacro:property name="camera_width" value="0.04"/-->
+   <!--joint name="camera_joint" type="fixed">
+      <parent link="wrist_1_link"/>
+      <child link="camera_link"/>
+      <origin xyz="0 0 -0.04" rpy="0 0 3.1415"/>
+   </joint-->
+   
+   <!--camera link -->
+   
+   <!--link name="camera_link">
+    <inertial>
+     <origin xyz="0 0 -0.04" rpy="0 0 3.1415"/>
+     <mass value="1e-5"/>
+     <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+     
+     <visual>
+	      <origin xyz="0 0 -0.04" rpy="0 0 3.1415"/>
+	      <geometry>
+		<box size="0.04 0.04 0.04"/>
+	      </geometry>
+	      <material name="red">
+		<color rgba="0.9 0.1 0.1" />
+	      </material>
+     </visual>
+     
+     <collision>
+       <origin xyz="0 0 -0.04" rpy="0 0 3.1415"/>
+       <geometry>
+        <box size="0.04 0.04 0.04"/>
+       </geometry>
+     </collision>
+   </link-->
+   
+  
+</robot>
+     
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    	
+   
